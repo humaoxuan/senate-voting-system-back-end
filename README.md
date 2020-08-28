@@ -1,1 +1,1 @@
-# senante-voting-system-back-end
+# senate-voting-system-back-end
