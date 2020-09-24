@@ -1,33 +1,134 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="8523736c-6f00-4134-8b04-0b79f75ec2b3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/senate-voting-system-back-end/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="8523736c-6f00-4134-8b04-0b79f75ec2b3" name="Default Changelist" comment="Initial commit">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/candidate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/candidates.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/encrypt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/accepts/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/accepts/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/array-flatten/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/array-flatten/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/basic-auth/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/basic-auth/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/body-parser/HISTORY.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/body-parser/HISTORY.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/body-parser/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/body-parser/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/body-parser/lib/types/urlencoded.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/body-parser/lib/types/urlencoded.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/body-parser/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/body-parser/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bytes/History.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bytes/History.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bytes/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bytes/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bytes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bytes/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bytes/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bytes/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/content-disposition/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/content-disposition/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/content-type/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/content-type/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/cookie-parser/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cookie-parser/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/cookie-signature/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cookie-signature/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/cookie/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cookie/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/debug/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/debug/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/depd/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/depd/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/destroy/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/destroy/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ee-first/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ee-first/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ejs/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ejs/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/encodeurl/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/encodeurl/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/escape-html/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/escape-html/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/etag/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/etag/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express/node_modules/cookie/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express/node_modules/cookie/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/finalhandler/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/finalhandler/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/forwarded/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/forwarded/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/fresh/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/fresh/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/http-errors/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/http-errors/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/iconv-lite/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/iconv-lite/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/inherits/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/inherits/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ipaddr.js/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ipaddr.js/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/media-typer/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/media-typer/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/merge-descriptors/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/merge-descriptors/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/methods/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/methods/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mime-db/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mime-db/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mime-types/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mime-types/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/mime/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mime/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/morgan/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/morgan/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ms/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ms/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/negotiator/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/negotiator/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/on-finished/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/on-finished/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/on-headers/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/on-headers/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/parseurl/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/parseurl/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/path-to-regexp/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/path-to-regexp/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/proxy-addr/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/proxy-addr/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/qs/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/qs/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/range-parser/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/range-parser/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/raw-body/HISTORY.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/raw-body/HISTORY.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/raw-body/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/raw-body/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/safe-buffer/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/safe-buffer/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/safer-buffer/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/safer-buffer/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/send/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/send/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/serve-static/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/serve-static/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/setprototypeof/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/setprototypeof/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/statuses/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/statuses/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/type-is/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/type-is/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/unpipe/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/unpipe/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/utils-merge/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/utils-merge/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vary/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/vary/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/users.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/senate-voting-system-back-end" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1gjKmlt4qf5y2Az899rIbiJU552" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="14.9.0" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.6.1" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/senate-voting-system-back-end" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/routes" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Express_code\senate-voting-system-back-end\routes" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="npm install --save sequelize" />
+      <command value="new Date()" />
+    </option>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -39,17 +140,33 @@
       <updated>1598622722687</updated>
       <workItem from="1598622724339" duration="308000" />
       <workItem from="1599405810059" duration="1212000" />
+      <workItem from="1599408681422" duration="30844000" />
+      <workItem from="1599723282946" duration="651000" />
+      <workItem from="1600835720386" duration="4156000" />
+      <workItem from="1600908306160" duration="3823000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/senate-voting-system-back-end" />
+    </ignored-roots>
+    <MESSAGE value="Initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="558" y="90" key="CommitChangelistDialog2" timestamp="1599406493836">
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1599475523633">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="558" y="90" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1599406493836" />
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1599475523633" />
+    <state x="558" y="90" key="CommitChangelistDialog2" timestamp="1600913230614">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="558" y="90" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1600913230614" />
     <state x="740" y="261" key="FileChooserDialogImpl" timestamp="1599406248912">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -66,26 +183,74 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="725" y="212" key="Github.UntrackedFilesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1599406583185" />
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1598623031793">
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1600913230682">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1598623031793" />
-    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1598623031791">
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1600913230682" />
+    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1600913230682">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1598623031791" />
-    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1598623031790">
+    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1600913230682" />
+    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1600913230682">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1598623031790" />
-    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1598623031792">
+    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1600913230682" />
+    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1600913230682">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1598623031792" />
-    <state x="461" y="164" key="SettingsEditor" timestamp="1599405895730">
+    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600913230682" />
+    <state width="1899" height="348" key="GridCell.Tab.1.bottom" timestamp="1599502786691">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1599405895730" />
+    <state width="1899" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1599502786691" />
+    <state width="1899" height="348" key="GridCell.Tab.1.center" timestamp="1599502786691">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1599502786691" />
+    <state width="1899" height="348" key="GridCell.Tab.1.left" timestamp="1599502786691">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1599502786691" />
+    <state width="1899" height="348" key="GridCell.Tab.1.right" timestamp="1599502786691">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1599502786691" />
+    <state width="1899" height="348" key="GridCell.Tab.2.bottom" timestamp="1599502786691">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="348" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1599502786691" />
+    <state width="1899" height="348" key="GridCell.Tab.2.center" timestamp="1599502786691">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="348" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1599502786691" />
+    <state width="1899" height="348" key="GridCell.Tab.2.left" timestamp="1599502786691">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="348" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1599502786691" />
+    <state width="1899" height="348" key="GridCell.Tab.2.right" timestamp="1599502786691">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="348" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1599502786691" />
+    <state width="1899" height="348" key="GridCell.Tab.3.bottom" timestamp="1599502786691">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="348" key="GridCell.Tab.3.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1599502786691" />
+    <state width="1899" height="348" key="GridCell.Tab.3.center" timestamp="1599502786691">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="348" key="GridCell.Tab.3.center/0.0.1920.1040@0.0.1920.1040" timestamp="1599502786691" />
+    <state width="1899" height="348" key="GridCell.Tab.3.left" timestamp="1599502786691">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="348" key="GridCell.Tab.3.left/0.0.1920.1040@0.0.1920.1040" timestamp="1599502786691" />
+    <state width="1899" height="348" key="GridCell.Tab.3.right" timestamp="1599502786691">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="348" key="GridCell.Tab.3.right/0.0.1920.1040@0.0.1920.1040" timestamp="1599502786691" />
+    <state x="461" y="164" key="SettingsEditor" timestamp="1599408708859">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1599408708859" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1599406399258">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -98,9 +263,13 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="761" y="426" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1599406344031" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1598622780844">
+    <state x="616" y="240" width="672" height="677" key="run.anything.popup" timestamp="1599473782307">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1598622780844" />
+    <state x="616" y="240" width="672" height="677" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599473782307" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1599508402033">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599508402033" />
   </component>
 </project>
