@@ -4,11 +4,6 @@ const models = require('../models');
 const config = require('../config/config.json');
 const encrypt = require('../utils/encrypt')
 
-
-const saltRounds = process.env['NODE_ENV'] == null ?
-    config['development']['saltRounds'] :
-    config['production']['saltRounds'];
-
 /* GET SELECT */
 router.get('/', async function(req, res, next) {
 
