@@ -6,6 +6,7 @@ const encrypt = require('../utils/encrypt')
 /* GET SELECT */
 router.get('/', async function(req, res, next) {
     let user = await models.user.findByPk(req.body['id']);
+    console.log(user);
     res.json({user: user});
 });
 
