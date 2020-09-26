@@ -7,6 +7,11 @@ const encrypt = require('../utils/encrypt')
 /* GET SELECT */
 router.get('/', async function(req, res, next) {
 
+
+});
+
+router.post('/', async function(req, res, next) {
+
     let user = await models.user.findAll({
         where: {
             email: req.body['email']
@@ -22,11 +27,6 @@ router.get('/', async function(req, res, next) {
         //todo return flash
         res.send('wrong password');
     }
-
-});
-
-router.post('/', async function(req, res, next) {
-    res.json(req.body);
 });
 
 module.exports = router;

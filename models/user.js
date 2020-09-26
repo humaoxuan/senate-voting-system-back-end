@@ -17,10 +17,11 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING,
     birthday: DataTypes.DATE,
     passport: DataTypes.STRING,
-    driver_license: DataTypes.INTEGER,
+    driverLicense: DataTypes.INTEGER,
     address: DataTypes.TEXT,
     password: DataTypes.STRING,
-    email: DataTypes.STRING
+    email: DataTypes.STRING,
+    phoneNumber: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'user',
