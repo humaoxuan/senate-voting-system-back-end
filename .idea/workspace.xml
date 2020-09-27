@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8523736c-6f00-4134-8b04-0b79f75ec2b3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/routes/test.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/encrypt.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/encrypt.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +79,7 @@
       <workItem from="1601099829902" duration="3133000" />
       <workItem from="1601103638425" duration="9953000" />
       <workItem from="1601170123290" duration="2075000" />
-      <workItem from="1601174854792" duration="6495000" />
+      <workItem from="1601174854792" duration="7176000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1600913602558</created>
@@ -109,7 +102,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601117870089</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="* Replace encrypt method from bcrypt with argon2(the winner of 2015 PHC)&#10;* fix a user log up bug">
+      <created>1601184689256</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1601184689256</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -122,7 +122,8 @@
     </ignored-roots>
     <MESSAGE value="Initial commit" />
     <MESSAGE value="* Run app with nodemon instead of node&#10;* Add user api doc as template&#10;* Make user router more RESTful&#10;* Complete add user operation" />
-    <option name="LAST_COMMIT_MESSAGE" value="* Run app with nodemon instead of node&#10;* Add user api doc as template&#10;* Make user router more RESTful&#10;* Complete add user operation" />
+    <MESSAGE value="* Replace encrypt method from bcrypt with argon2(the winner of 2015 PHC)&#10;* fix a user log up bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="* Replace encrypt method from bcrypt with argon2(the winner of 2015 PHC)&#10;* fix a user log up bug" />
   </component>
   <component name="WindowStateProjectService">
     <state x="402" y="23" width="1092" height="834" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601104049289">
@@ -137,10 +138,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1599475523633" />
-    <state x="558" y="45" key="CommitChangelistDialog2" timestamp="1601117868973">
+    <state x="558" y="45" key="CommitChangelistDialog2" timestamp="1601184687955">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="558" y="45" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1601117868973" />
+    <state x="558" y="45" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1601184687955" />
     <state x="740" y="261" key="FileChooserDialogImpl" timestamp="1601104044891">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -221,14 +222,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1899" height="348" key="GridCell.Tab.3.right/0.0.1920.1040@0.0.1920.1040" timestamp="1599502786691" />
+    <state x="711" y="221" key="RollbackChangesDialog" timestamp="1601184710664">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="711" y="221" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601184710664" />
     <state x="461" y="164" key="SettingsEditor" timestamp="1601101433678">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1601101433678" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1601117875135">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1601184720114">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1601117875135" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1601184720114" />
     <state x="763" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599406272656">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
