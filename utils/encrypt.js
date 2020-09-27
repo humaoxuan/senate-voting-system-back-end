@@ -1,19 +1,29 @@
-const bcrypt = require('bcrypt')
 const config = require('../config/config.json')
-
-// The greater the saltRounds value is the more difficult to hack
-// but also spend more time to encrypt
-// Defined in config.json
-const saltRounds = process.env['NODE_ENV'] == null ?
-    config['development']['saltRounds'] :
-    config['production']['saltRounds'];
+const argon2 = require('argon2')
 
 let encrypt = password => {
-    return bcrypt.hashSync(password, saltRounds);
+    let hash = "";
+    try {
+        hash = argon2.hash(password);
+    } catch (err) {
+        console.log(err);
+    }
+    return hash;
 }
 
-let compare = (password,hash) => {
-    return !!bcrypt.compareSync(password, hash);
+let compare = async (password,hash) => {
+    try {
+        if (await argon2.verify(hash, password)) {
+            // password match
+            return true;
+        } else {
+            // password did not match
+            return false;
+        }
+    } catch (err) {
+        // internal failure
+        console.log(err);
+    }
 }
 
 module.exports.encrypt =encrypt;

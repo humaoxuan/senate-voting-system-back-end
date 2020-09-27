@@ -13,36 +13,49 @@ router.get('/:id', async function (req, res, next) {
 router.post('/', async function (req, res, next) {
     let user = req.body;
 
-    //check if the driver license, passport and email exist in database
-    let count = await models.user.findAndCountAll({
+    // check if the driver license, passport and email exist in database
+    // @param {json} [dbRes] response json from database
+    let dbRes = await models.user.findAndCountAll({
         where: {
             email: req.body['email']
         }
     })
-    if(count!=0){
-        res.json({status: "error"});
+
+    // driver license, passport or email already exist in database
+    if (dbRes['count'] != 0) {
+        res.json({
+            status: "error", description: "driver license, passport or email already exist in database"
+        });
+        return;
     }
 
     // encrypt password
-    user['password'] = encrypt.encrypt(user['password']);
-    res.send(user);
+    user['password'] = await encrypt.encrypt(user['password']);
 
     // insert into database
     try {
         user = await models.user.create(req.body);
     } catch (err) {
-        res.json({status: "error"});
+        console.log(err);
+        // failed to insert into database
+        // could be database connection error or input not correct
+        res.json({status: "error", description: "input not correct or database connection error"});
+        return;
     }
 
+    // insert success
     res.json({
         status: "success"
-        , id: user['id']
+        , user: {
+            id: user['id']
+        }
     });
+
 });
 
 /* PATCH UPDATE */
 router.patch('/password', async function (req, res, next) {
-    await models.user.update({password: encrypt.encrypt(req.body['password'])}, {
+    await models.user.update({password: await encrypt.encrypt(req.body['password'])}, {
         where: {
             id: req.body['id']
         }

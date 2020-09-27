@@ -4,23 +4,20 @@
     "password": "ssesql!",
     "database": "database_test",
     "host": "104.199.137.67",
-    "dialect": "postgres",
-    "saltRounds": 10
+    "dialect": "postgres"
   },
   "test": {
     "username": "postgres",
     "password": "ssesql!",
     "database": "database_test",
     "host": "104.199.137.67",
-    "dialect": "postgres",
-    "saltRounds": 10
+    "dialect": "postgres"
   },
   "production": {
     "username": "postgres",
     "password": "ssesql!",
     "database": "vote",
     "host": "104.199.137.67",
-    "dialect": "postgres",
-    "saltRounds": 10
+    "dialect": "postgres"
   }
 }

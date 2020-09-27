@@ -18,7 +18,7 @@ router.post('/', async function(req, res, next) {
         }
     })
 
-    if(encrypt.compare(req.body['password'],user[0]['password'])){
+    if(await encrypt.compare(req.body['password'],user[0]['password'])){
         //Password match
         //Todo login
         res.send('success')
