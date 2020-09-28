@@ -32,12 +32,12 @@ router.post('/', async function (req, res, next) {
         where: {
             email: req.body['email']
         }
-    })
+    });
 
     // driver license, passport or email already exist in database
     if (dbRes['count'] != 0) {
         res.json({
-            status: "error", description: "driver license, passport or email already exist in database"
+            status: "error", msg: "driver license, passport or email already exist in database"
         });
         return;
     }
@@ -52,7 +52,7 @@ router.post('/', async function (req, res, next) {
         console.log(err);
         // failed to insert into database
         // could be database connection error or input not correct
-        res.json({status: "error", description: "input not correct or database connection error"});
+        res.json({status: "error", msg: "input not correct or database connection error"});
         return;
     }
 
