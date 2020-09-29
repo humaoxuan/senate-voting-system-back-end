@@ -17,7 +17,7 @@ router.post('/', async function (req, res, next) {
     // @param {json} [dbRes] response json from database
     let dbRes = await models.party.findAndCountAll({
         where: {
-            party: req.body['party']
+            partyName: req.body['partyName']
         }
     })
 
@@ -54,12 +54,51 @@ router.post('/', async function (req, res, next) {
 });
 
 /* PATCH UPDATE */
-router.patch('/party', async function (req, res, next) {
-    await models.party.update({partyName: await req.body['partyName']}, {
-        where: {
-            partyName: req.body['partyName']
-        }
-    });
+router.patch('/', async function (req, res, next) {
+    let newName = req.body['newName'];
+    // let dbRes = await models.party.update({partyName: newName}, {
+    //     where: {
+    //         partyName: req.body['partyName']
+    //     }
+    // });
+
+   //update success
+    //res.send(dbRes);
+    // if(dbRes != 0){
+    //     res.json({
+    //         status: "error", description: "Can not find party name"
+    //     });
+    //     return;
+    // }
+    // res.json({
+    //     status: "success"
+    // });
+    let dbRes = await models.party.update({partyName: newName},
+    dbRes.connections.update({
+        partyName: data.newName,
+    }, {
+        where: { partyName: req.body['partyName'] },
+        returning: true,
+        plain: true
+    })
+        .then(function (result) {
+            console.log(result);
+        });
 });
+
+// db.connections.update({
+//     user: data.username,
+//     chatroomID: data.chatroomID
+// }, {
+//     where: { socketID: socket.id },
+//     returning: true,
+//     plain: true
+// })
+//     .then(function (result) {
+//         console.log(result);
+//         // result = [x] or [x, y]
+//         // [x] if you're not using Postgres
+//         // [x, y] if you are using Postgres
+//     });
 
 module.exports = router;

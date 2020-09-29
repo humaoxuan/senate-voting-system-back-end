@@ -14,6 +14,7 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const candidatesRouter = require('./routes/candidates');
 const loginRouter = require('./routes/login');
+const partyRouter = require('./routes/party');
 
 // setup route middlewares
 const sequelizeSessionStore = new SessionStore({
@@ -57,6 +58,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/candidates', candidatesRouter);
 app.use('/login', loginRouter);
+app.use('/party', partyRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

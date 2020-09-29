@@ -4,7 +4,8 @@ const router = express.Router();
 /* GET home page. */
 router.get('/', function(req, res, next) {
   // client.query()
-  res.render('index', { title: 'Express' });
+  res.send(req.csrfToken());
+  // res.render('index', { title: 'Express' });
 });
 
 module.exports = router;
