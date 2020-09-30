@@ -1,3 +1,4 @@
-migrations
-seeders
-.idea
+/migrations
+/seeders
+/.idea
+/dist
