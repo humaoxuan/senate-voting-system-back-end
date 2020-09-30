@@ -4,9 +4,9 @@ const models = require('../models');
 const encrypt = require('../utils/encrypt')
 
 /* GET home page. */
-router.get('/', async function(req, res, next) {
+router.get('/', async function (req, res, next) {
     let party = await models.party.findAll();
-    res.json({party:party});
+    res.json({party: party});
 });
 
 /* POST ADD */
@@ -53,52 +53,33 @@ router.post('/', async function (req, res, next) {
 
 });
 
-/* PATCH UPDATE */
-router.patch('/', async function (req, res, next) {
-    let newName = req.body['newName'];
-    // let dbRes = await models.party.update({partyName: newName}, {
-    //     where: {
-    //         partyName: req.body['partyName']
-    //     }
-    // });
+/* PUT UPDATE */
+router.put('/', async function (req, res, next) {
+    //let newName = req.body['newName'];
+    //update the old party name
 
-   //update success
-    //res.send(dbRes);
-    // if(dbRes != 0){
-    //     res.json({
-    //         status: "error", description: "Can not find party name"
-    //     });
-    //     return;
-    // }
-    // res.json({
-    //     status: "success"
-    // });
-    let dbRes = await models.party.update({partyName: newName},
-    dbRes.connections.update({
-        partyName: data.newName,
+    let dbRes = await models.party.update({
+        partyName: req.body['newName'],
     }, {
-        where: { partyName: req.body['partyName'] },
-        returning: true,
-        plain: true
+        where: {partyName: req.body['partyName']},
+        returning: true
     })
-        .then(function (result) {
-            console.log(result);
+
+    //console.log(dbRes);
+
+    //update success
+    //Check if the update result is 0 or not, 0 show update success or not
+    if (dbRes[0] === 0) {
+        res.json({
+            status: "error", description: "Can not find party name"
         });
+        return;
+    }
+    res.json({
+        status: "success"
+    });
+
 });
 
-// db.connections.update({
-//     user: data.username,
-//     chatroomID: data.chatroomID
-// }, {
-//     where: { socketID: socket.id },
-//     returning: true,
-//     plain: true
-// })
-//     .then(function (result) {
-//         console.log(result);
-//         // result = [x] or [x, y]
-//         // [x] if you're not using Postgres
-//         // [x, y] if you are using Postgres
-//     });
 
 module.exports = router;
