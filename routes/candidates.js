@@ -3,21 +3,29 @@ const router = express.Router();
 const models = require('../models');
 
 /* GET home page. */
-router.get('/', async function(req, res, next) {
-    let candidates = await models.candidate.findAll();
-    res.json({candidates:candidates});
+router.get('/:name', async function (req, res, next) {
+    const candidates = await models.candidate.findByPk(req.params.name);
+    if (candidates === null) {
+        console.log('Not found!');
+    } else {
+        console.log(candidates instanceof models.candidate); // true
+        // 它的主键是 123
+    }
+    //let candidates = await models.candidate.findAll();
+    // res.json({candidates:candidates});
 });
 
-/* POST ADD Candidate name */
-router.post('/', async function(req, res, next){
+/* POST ADD Candidate name， party ID and area name */
+router.post('/', async function (req, res, next) {
     let candidates = req.body;
 
     // check if the candidate's name and candidate's party name exist in database
     // @param {json} [dbRes] response json from database
-    let dbRes = await models.user.findAndCountAll({
+    let dbRes = await models.candidate.findAndCountAll({
         where: {
-            name: req.body['name']
-            //party: req.body['party']
+            name: req.body['candidateName'],
+            party: req.body['partyID']
+            //:req.body['areaName']
         }
     })
 
@@ -29,12 +37,14 @@ router.post('/', async function(req, res, next){
         return;
     }
 
-    // encrypt password
-    //user['password'] = await encrypt.encrypt(user['password']);
-
     // insert into database
     try {
-        user = await models.user.create(req.body);
+        candidates = await models.candidate.create({
+            name: req.body.candidateName,
+            party: req.body.partyID
+            //area:req.body.areaName
+            //votes: 0
+        });
     } catch (err) {
         console.log(err);
         // failed to insert into database
@@ -43,80 +53,44 @@ router.post('/', async function(req, res, next){
         return;
     }
 
-    // insert success
+    // add success
     res.json({
         status: "success"
         , candidates: {
-            name: candidates['name']
-            //party: candidates['party']
+            name: candidates['candidateName'],
+            party: candidates['partyID']
         }
     });
 
 
-
 });
 
-/* POST ADD party name*/
-router.post('/party', async function(req, res, next){
-    let candidates = req.body;
 
-    // check if the candidate's name and candidate's party name exist in database
-    // @param {json} [dbRes] response json from database
-    let dbRes = await models.party.findAndCountAll({
+/* PUT UPDATE */
+router.put('/', async function (req, res, next) {
+    let dbRes = await models.candidate.update({
+        party: req.body['newpartyID'],
+    }, {
         where: {
-            party: req.body['party']
-        }
+            name: req.body['candidateName'],
+            party: req.body['partyID']
+        },
+        returning: true
     })
 
-    // candidate's name and candidate's party name already exist in database
-    if (dbRes['count'] != 0) {
+    //console.log(dbRes);
+
+    //update success
+    if (dbRes[0] === 0) {
         res.json({
-            status: "error", description: "candidate's party name already exist in database"
+            status: "error", description: "Can not find party name"
         });
         return;
     }
-
-    // encrypt password
-    //user['password'] = await encrypt.encrypt(user['password']);
-
-    // insert into database
-    try {
-        user = await models.user.create(req.body);
-    } catch (err) {
-        console.log(err);
-        // failed to insert into database
-        // could be database connection error or input not correct
-        res.json({status: "error", description: "input not correct or database connection error"});
-        return;
-    }
-
-    // insert success
     res.json({
         status: "success"
-        , candidates: {
-            party: candidates['party']
-        }
-    });
-
-
-
-});
-
-/* PATCH UPDATE */
-router.patch('/name', async function (req, res, next) {
-    await models.user.update({name: await req.body['name']}, {
-        where: {
-            id: req.body['id']
-        }
     });
 });
 
-router.patch('/party', async function (req, res, next) {
-    await models.user.update({party: await req.body['party']}, {
-        where: {
-            id: req.body['id']
-        }
-    });
-});
 
 module.exports = router;

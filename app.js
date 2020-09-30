@@ -30,7 +30,7 @@ const sessionOption = {
   resave: false,
   saveUninitialized: true,
   cookie: {
-    maxAge: 1000 * 60 * 10, // session duration set to 10min
+    maxAge: 1000 * 60 * 100, // session duration set to 10min
     httpOnly: true, // true means disable front-end to change the value
     secure: false // only enable cookie when connection is HTTPS, will be disable when HTTP
   }
