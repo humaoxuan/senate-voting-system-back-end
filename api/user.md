@@ -26,7 +26,6 @@ http://localhost/user/21
 |passport|int|
 |driverLicense|string
 |address|string
-|password|string
 |email|string
 |createdAt|string
 |updatedAt|string
@@ -36,16 +35,15 @@ http://localhost/user/21
 {
     "user": {
         "id": 21,
-        "name": "Foo Bar",
-        "birthday": "1992-01-01",
-        "passport": "eh000000",
+        "name": " Foo Bar",
+        "birthday": "1991-12-31",
+        "passport": " eh000000",
         "driverLicense": 123456,
-        "address": "22 Tecoma",
-        "password": "$10$Tw0pqw4k8JSZcHlOJyz4dOAj1M6vyRMEN.3s8uCsUvZ6845DFyWQO",
-        "email": "1234@123.com",
-        "phoneNumber": 0432811111,
-        "createdAt": "2020-09-07T18:22:04.280Z",
-        "updatedAt": "2020-09-07T18:22:04.280Z"
+        "address": " 22 Tecoma",
+        "email": " 12345@123.com",
+        "phoneNumber": 432811111,
+        "createdAt": "2020-09-26T08:52:29.358Z",
+        "updatedAt": "2020-09-26T08:52:29.358Z"
     }
 }
 ```
@@ -76,35 +74,48 @@ http://localhost/user
 ## Request exapmle
 ```
 {
-    "name": "Foo Bar",
-    "birthday": "1992-01-01",
-    "passport": "eh000000",
-    "driverLicense": 123456,
-    "address": "22 Tecoma",
-    "password": "abc123",
-    "email": "1234@123.com",
-    "phoneNumber": 0432811111
+    "user": {
+        "name": "Foo Bar",
+        "birthday": "1992-01-01",
+        "passport": "eh000000",
+        "driverLicense": 123456,
+        "address": "22 Tecoma",
+        "password": "abc123",
+        "email": "1234@123.com",
+        "phoneNumber": 0432811111
+    }
 }
 ```
 
 ## Response parameter
 |Field|Type|Description|
 |:--- |:---|---|
-|status |int|
+|status |string|
+|msg|string|Give the reason why failed
 |id |int|option
 
 ## Response example - Success
 ```
 {
     "status": "success",
-    "id": 21
+    "user": {
+        "id": 21
+    }
 }
 ```
 
 ## Response example - Fail
 ```
 {
-    "status": "error"
+    "status": "error",
+    "msg": "input not correct or database connection error"
 }
 ```
 
+## Response example - Fail
+```
+{
+    "status": "error",
+    "msg": "driver license, passport or email already exist in database"
+}
+```
