@@ -1,3 +1,10 @@
-migrations
-seeders
-.idea
+#sequelize
+/migrations
+/seeders
+
+#IDE
+/.idea
+
+
+/dist
+/node_modules
