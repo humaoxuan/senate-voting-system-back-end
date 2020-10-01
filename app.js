@@ -12,8 +12,11 @@ const helmet = require('helmet');
 const rateLimit = require("express-rate-limit");
 const passport = require('passport')
     , LocalStrategy = require('passport-local').Strategy;
+const cors = require('cors');
+
 
 const indexRouter = require('./routes/index');
+const csrfRouter = require('./routes/csrf');
 const usersRouter = require('./routes/users');
 const candidatesRouter = require('./routes/candidates');
 const loginRouter = require('./routes/login');
@@ -51,6 +54,7 @@ app.set('view engine', 'ejs');
 //session
 
 
+app.use(cors());
 app.use(express.static(path.join(__dirname, 'dist')));
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -60,15 +64,16 @@ app.use(express.urlencoded({ extended: false }));
 app.use(expressSession(sessionOption));
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(csurf({cookie: false})); // false means store the token in req.session
 app.use(helmet());
 app.use(limiter);
-
-
-app.use('/csrf', indexRouter);
 app.use('/users', usersRouter);
-app.use('/candidates', candidatesRouter);
+app.use(csurf({cookie: false})); // false means store the token in req.session
+
+
+app.use('/', indexRouter);
+app.use('/csrf', csrfRouter);
 app.use('/login', loginRouter);
+app.use('/candidates', candidatesRouter);
 app.use('/party', partyRouter);
 
 // catch 404 and forward to error handler

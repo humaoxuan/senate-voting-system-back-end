@@ -3,7 +3,7 @@ const router = express.Router();
 
 /* GET csrf. */
 router.get('/', function(req, res, next) {
-  res.sendFile(__dirname+'home.html');
+  res.json({csrfToken: req.csrfToken()});
 });
 
 module.exports = router;

@@ -25,7 +25,7 @@ router.get('/:id', async function (req, res, next) {
 /* POST ADD */
 router.post('/', async function (req, res, next) {
     let user = req.body;
-
+    console.log(req.body);
     // check if the driver license, passport and email exist in database
     // @param {json} [dbRes] response json from database
     let dbRes = await models.user.findAndCountAll({
