@@ -12,7 +12,7 @@ router.get('/:name', async function (req, res, next) {
         // 它的主键是 123
     }
     //let candidates = await models.candidate.findAll();
-    // res.json({candidates:candidates});
+    res.json({candidates:candidates});
 });
 
 /* POST ADD Candidate name， party ID and area name */
