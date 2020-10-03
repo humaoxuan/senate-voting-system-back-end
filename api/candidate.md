@@ -145,3 +145,47 @@ newpartyID     3
     "description": "Can not find party name"
 }
 ```
+
+# Candidate - Delete chosen candidate information
+
+## Method
+> DELETE
+
+## URL
+> /candidates
+
+## Example usage
+http://localhost/api/candidates
+
+## Request parameter
+This request do not have any parameters
+
+## Request exapmle
+```
+_csrf     9KdH2zjl-rFGzytxMt3KB57_S_xjTPDE-fOM
+candidateName Andy1
+partyID       3
+
+```
+
+## Response parameter
+|Field|Type|Description|
+|:--- |:---|---|
+|status |string|
+|description|string|Give the reason why failed
+
+
+## Response example - Success
+```
+{
+    "status": "success"
+}
+```
+
+## Response example - Fail
+```
+{
+    "status": "error",
+    "description": "Can not find candidate name"
+}
+```

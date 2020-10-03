@@ -139,10 +139,45 @@ newName   Road party
 }
 ```
 
+# Party - Delete chosen party information
+
+## Method
+> DELETE
+
+## URL
+> /party
+
+## Example usage
+http://localhost/api/party
+
+## Request parameter
+This request do not have any parameters
+
+## Request exapmle
+```
+_csrf     9KdH2zjl-rFGzytxMt3KB57_S_xjTPDE-fOM
+partyName aaa party
+
+```
+
+## Response parameter
+|Field|Type|Description|
+|:--- |:---|---|
+|status |string|
+|description|string|Give the reason why failed
+
+
+## Response example - Success
+```
+{
+    "status": "success"
+}
+```
+
 ## Response example - Fail
 ```
 {
     "status": "error",
-    "msg": "driver license, passport or email already exist in database"
+    "description": "Can not find party name"
 }
 ```

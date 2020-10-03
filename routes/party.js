@@ -81,5 +81,35 @@ router.put('/', async function (req, res, next) {
 
 });
 
+/* DELETE DELETE USELESS PARTY INFORMATION */
+router.delete('/', async function (req, res, next) {
+    //let newName = req.body['newName'];
+    //update the old party name
+
+    let dbRes = await models.party.destroy(
+     {
+        where: {partyName: req.body['partyName']},
+        returning: true
+    })
+
+    //console.log(dbRes);
+
+    //delete success
+    //Check if the delete result is 0 or not, 0 show delete success or not
+    if (dbRes === 0) {
+        res.json({
+            status: "error", description: "Can not find party name"
+        });
+        return;
+    }
+    if(dbRes === 1) {
+        res.json({
+            status: "success"
+        });
+        return;
+    }
+
+});
+
 
 module.exports = router;
