@@ -56,10 +56,7 @@ router.post('/', async function (req, res, next) {
     // add success
     res.json({
         status: "success"
-        , candidates: {
-            name: candidates['candidateName'],
-            party: candidates['partyID']
-        }
+        , candidates:{candidates}
     });
 
 
@@ -89,6 +86,7 @@ router.put('/', async function (req, res, next) {
     }
     res.json({
         status: "success"
+        , description: "Update Completed"
     });
 });
 
