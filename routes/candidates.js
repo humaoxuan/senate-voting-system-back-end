@@ -30,8 +30,8 @@ router.post('/', async function (req, res, next) {
     let dbRes = await models.candidate.findAndCountAll({
         where: {
             name: req.body['candidateName'],
-            party: req.body['partyID']
-            //:req.body['areaName']
+            party: req.body['party'],
+            state: req.body['state']
         }
     })
 
@@ -47,9 +47,8 @@ router.post('/', async function (req, res, next) {
     try {
         candidates = await models.candidate.create({
             name: req.body.candidateName,
-            party: req.body.partyID
-            //area:req.body.areaName
-            //votes: 0
+            party: req.body.party,
+            state: req.body['state']
         });
     } catch (err) {
         console.log(err);
