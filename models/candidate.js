@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
   candidate.init({
     name: DataTypes.STRING,
     party: DataTypes.STRING,
-    votes: DataTypes.INTEGER
+    state: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'candidate',
