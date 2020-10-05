@@ -12,7 +12,6 @@ const helmet = require('helmet');
 const rateLimit = require("express-rate-limit");
 const passport = require('passport')
     , LocalStrategy = require('passport-local').Strategy;
-const cors = require('cors');
 
 
 const csrfRouter = require('./routes/csrf');
@@ -50,13 +49,7 @@ const app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-//session
 
-
-app.use(cors({
-    origin:  true,
-    credentials: true
-}));
 app.use(express.static(path.join(__dirname, 'dist')));
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({extended: true}));
