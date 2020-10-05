@@ -24,7 +24,7 @@ router.post('/', async function (req, res, next) {
     // driver license, passport or email already exist in database
     if (dbRes['count'] != 0) {
         res.json({
-            status: "error", description: "Party name already exist in database"
+            status: "error", msg: "Party name already exist in database"
         });
         return;
     }
@@ -39,7 +39,7 @@ router.post('/', async function (req, res, next) {
         console.log(err);
         // failed to insert into database
         // could be database connection error or input not correct
-        res.json({status: "error", description: "input not correct or database connection error"});
+        res.json({status: "error", msg: "input not correct or database connection error"});
         return;
     }
 
@@ -71,7 +71,7 @@ router.put('/', async function (req, res, next) {
     //Check if the update result is 0 or not, 0 show update success or not
     if (dbRes[0] === 0) {
         res.json({
-            status: "error", description: "Can not find party name"
+            status: "error", msg: "Can not find party name"
         });
         return;
     }
@@ -83,12 +83,9 @@ router.put('/', async function (req, res, next) {
 
 /* DELETE DELETE USELESS PARTY INFORMATION */
 router.delete('/', async function (req, res, next) {
-    //let newName = req.body['newName'];
-    //update the old party name
-
     let dbRes = await models.party.destroy(
      {
-        where: {partyName: req.body['partyName']},
+        where: {partyName: req.query['partyName']},
         returning: true
     })
 
@@ -98,7 +95,7 @@ router.delete('/', async function (req, res, next) {
     //Check if the delete result is 0 or not, 0 show delete success or not
     if (dbRes === 0) {
         res.json({
-            status: "error", description: "Can not find party name"
+            status: "error", msg: "Can not find party name"
         });
         return;
     }

@@ -53,7 +53,10 @@ app.set('view engine', 'ejs');
 //session
 
 
-app.use(cors());
+app.use(cors({
+    origin:  true,
+    credentials: true
+}));
 app.use(express.static(path.join(__dirname, 'dist')));
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({extended: true}));

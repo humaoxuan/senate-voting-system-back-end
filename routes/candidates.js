@@ -38,7 +38,7 @@ router.post('/', async function (req, res, next) {
     // candidate's name and candidate's party name already exist in database
     if (dbRes['count'] != 0) {
         res.json({
-            status: "error", description: "candidate's name  already exist in database"
+            status: "error", msg: "candidate's name  already exist in database"
         });
         return;
     }
@@ -54,7 +54,7 @@ router.post('/', async function (req, res, next) {
         console.log(err);
         // failed to insert into database
         // could be database connection error or input not correct
-        res.json({status: "error", description: "input not correct or database connection error"});
+        res.json({status: "error", msg: "input not correct or database connection error"});
         return;
     }
 
@@ -71,11 +71,11 @@ router.post('/', async function (req, res, next) {
 /* PUT UPDATE */
 router.put('/', async function (req, res, next) {
     let dbRes = await models.candidate.update({
-        party: req.body['newpartyID'],
+        party: req.body['newParty'],
     }, {
         where: {
             name: req.body['candidateName'],
-            party: req.body['partyID']
+            party: req.body['party']
         },
         returning: true
     })
@@ -85,35 +85,30 @@ router.put('/', async function (req, res, next) {
     //update success
     if (dbRes[0] === 0) {
         res.json({
-            status: "error", description: "Can not find party name"
+            status: "error", msg: "Can not find party name"
         });
         return;
     }
     res.json({
         status: "success"
-        , description: "Update Completed"
+        , msg: "Update Completed"
     });
 });
 
 /* DELETE DELETE USELESS CANDIDATE INFORMATION */
 router.delete('/', async function (req, res, next) {
-    //let newName = req.body['newName'];
-    //update the old party name
-
     let dbRes = await models.candidate.destroy(
         {
-            where: {name: req.body['candidateName'],
-            party:req.body['partyID']},
+            where: {name: req.query['candidateName'],
+            party: req.query['party']},
             returning: true
         })
-
-    console.log(dbRes);
 
     //delete success
     //Check if the delete result is 0 or not, 0 show delete success or not
     if (dbRes === 0) {
         res.json({
-            status: "error", description: "Can not find candidate name"
+            status: "error", msg: "Can not find candidate name"
         });
         return;
     }

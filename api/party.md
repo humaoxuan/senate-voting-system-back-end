@@ -67,7 +67,7 @@ partyName River party
 |Field|Type|Description|
 |:--- |:---|---|
 |status |string|
-|description|string|Give the reason why failed
+|msg|string|Give the reason why failed
 |id |int|option
 
 ## Response example - Success
@@ -84,7 +84,7 @@ partyName River party
 ```
 {
     "status": "error",
-    "description": "Party name already exist in database"
+    "msg": "Party name already exist in database"
 }
 ```
 
@@ -121,7 +121,7 @@ newName   Road party
 |Field|Type|Description|
 |:--- |:---|---|
 |status |string|
-|description|string|Give the reason why failed
+|msg|string|Give the reason why failed
 
 
 ## Response example - Success
@@ -135,7 +135,7 @@ newName   Road party
 ```
 {
     "status": "error",
-    "description": "Can not find party name"
+    "msg": "Can not find party name"
 }
 ```
 
@@ -164,7 +164,7 @@ partyName aaa party
 |Field|Type|Description|
 |:--- |:---|---|
 |status |string|
-|description|string|Give the reason why failed
+|msg|string|Give the reason why failed
 
 
 ## Response example - Success
@@ -178,6 +178,6 @@ partyName aaa party
 ```
 {
     "status": "error",
-    "description": "Can not find party name"
+    "msg": "Can not find party name"
 }
 ```

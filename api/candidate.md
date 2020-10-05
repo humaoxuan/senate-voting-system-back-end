@@ -66,7 +66,7 @@ partyID        3
 |Field|Type|Description|
 |:--- |:---|---|
 |status |string|
-|description|string|Give the reason why failed
+|msg|string|Give the reason why failed
 |id |int|
 |name |string|
 |partyName | string | 
@@ -97,7 +97,7 @@ partyID        3
 ```
 {
     "status": "error",
-    "description": "candidate's name  already exist in database"
+    "msg": "candidate's name  already exist in database"
 }
 ```
 
@@ -128,13 +128,13 @@ newpartyID     3
 |Field|Type|Description|
 |:--- |:---|---|
 |status |string|
-|description|string|Show the status of successful update or give the reason why failed
+|msg|string|Show the status of successful update or give the reason why failed
 
 ## Response example - Success
 ```
 {
     "status": "success",
-    "description": "Update Completed"
+    "msg": "Update Completed"
 }
 ```
 
@@ -142,7 +142,7 @@ newpartyID     3
 ```
 {
     "status": "error",
-    "description": "Can not find party name"
+    "msg": "Can not find party name"
 }
 ```
 
@@ -172,7 +172,7 @@ partyID       3
 |Field|Type|Description|
 |:--- |:---|---|
 |status |string|
-|description|string|Give the reason why failed
+|msg|string|Give the reason why failed
 
 
 ## Response example - Success
@@ -186,6 +186,6 @@ partyID       3
 ```
 {
     "status": "error",
-    "description": "Can not find candidate name"
+    "msg": "Can not find candidate name"
 }
 ```
