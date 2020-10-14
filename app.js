@@ -42,6 +42,7 @@ const limiter = rateLimit({
     max: 100 // limit each IP to 100 requests per windowMs
 });
 
+const csrfProtection = csurf({cookie: false});
 
 const app = express();
 
@@ -62,13 +63,13 @@ app.use(passport.session());
 app.use(helmet());
 app.use(limiter);
 app.use('/api/users', usersRouter);
-app.use(csurf({cookie: false})); // false means store the token in req.session
+// app.use()); // false means store the token in req.session
 
 
 app.use('/api/csrf', csrfRouter);
 app.use('/api/login', loginRouter);
-app.use('/api/candidates', candidatesRouter);
-app.use('/api/party', partyRouter);
+app.use('/api/candidates',csrfProtection, candidatesRouter);
+app.use('/api/party',csrfProtection, partyRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

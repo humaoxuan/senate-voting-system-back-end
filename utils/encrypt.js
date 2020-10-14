@@ -1,4 +1,3 @@
-const config = require('../config/config.json')
 const argon2 = require('argon2')
 
 let encrypt = password => {
