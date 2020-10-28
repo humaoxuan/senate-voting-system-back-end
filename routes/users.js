@@ -67,8 +67,8 @@ router.post('/', async function (req, res, next) {
 });
 
 /* PUT UPDATE */
-router.put('/password', async function (req, res, next) {
-    await models.user.update({password: await encrypt.encrypt(req.body['password'])}, {
+router.put('/', async function (req, res, next) {
+    await models.user.update({password: await encrypt.encrypt(req.body['password']),address: req.body.address,phoneNumber: req.body.phoneNumber}, {
         where: {
             id: req.body['id']
         }

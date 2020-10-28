@@ -147,30 +147,25 @@ router.get('/', async function (req, res, next) {
     candidatesMap.forEach(candidate=>{
         if(candidate.status===ELECTED) {
             delete candidate.id;
+            candidate.senator = candidate.name;
+            delete candidate.name;
             electedList.push(candidate);
-
-            console.log(candidate)
         }
     })
+    console.log(electedList);
 
     // insert into database
     try {
-        let dataRes = await models.party.create(req.body);
+        let dataRes = await models.result.bulkCreate(electedList);
     } catch (err) {
         console.log(err);
         // failed to insert into database
         // could be database connection error or input not correct
-        res.json({status: "error", msg: "input not correct or database connection error"});
+        res.json({status: "error", msg: "database connection error"});
         return;
     }
 
     // insert success
-    res.json({
-        status: "success"
-        , party: {
-            id: party['id']
-        }
-    });
     res.json({status: "count success"});
 });
 
