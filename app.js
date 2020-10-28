@@ -16,9 +16,12 @@ const passport = require('passport')
 
 const csrfRouter = require('./routes/csrf');
 const usersRouter = require('./routes/users');
+const ballotsRouter = require('./routes/ballots');
 const candidatesRouter = require('./routes/candidates');
 const loginRouter = require('./routes/login');
 const partyRouter = require('./routes/party');
+const resultsRouter = require('./routes/results');
+const countRouter = require('./routes/count');
 
 // setup route middlewares
 const sequelizeSessionStore = new SessionStore({
@@ -62,12 +65,13 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(helmet());
 app.use(limiter);
+
 app.use('/api/users', usersRouter);
-// app.use()); // false means store the token in req.session
-
-
-app.use('/api/csrf', csrfRouter);
 app.use('/api/login', loginRouter);
+app.use('/api/results', resultsRouter);
+app.use('/api/count', countRouter);
+app.use('/api/csrf',csrfProtection, csrfRouter);
+app.use('/api/ballots',csrfProtection, ballotsRouter);
 app.use('/api/candidates',csrfProtection, candidatesRouter);
 app.use('/api/party',csrfProtection, partyRouter);
 
