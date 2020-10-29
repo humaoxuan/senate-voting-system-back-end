@@ -21,6 +21,17 @@ router.get('/:id', async function (req, res, next) {
         }
     });
 });
+/* CHECK EMAIL */
+router.get('/email/:email', async function (req, res, next) {
+    console.log(req);
+    let user = await models.user.findAll({
+        where: {email: req.params.email}
+    });
+    if(user.length===0){
+        res.json({msg:'can use'});
+    }else
+        res.json({msg:'already exists'});
+});
 
 /* POST ADD */
 router.post('/', async function (req, res, next) {
@@ -71,6 +82,14 @@ router.put('/', async function (req, res, next) {
     await models.user.update({password: await encrypt.encrypt(req.body['password']),address: req.body.address,phoneNumber: req.body.phoneNumber}, {
         where: {
             id: req.body['id']
+        }
+    });
+
+    // insert success
+    res.json({
+        status: "success"
+        , user: {
+            id: user['id']
         }
     });
 });
