@@ -166,7 +166,7 @@ router.get('/', async function (req, res, next) {
     }
 
     // insert success
-    res.json({status: "count success"});
+    res.json({status: "success"});
 });
 
 
