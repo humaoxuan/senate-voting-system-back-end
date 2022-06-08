@@ -1,6 +1,6 @@
-# senate-voting-system-back-end
+# Voting-System-Backend
 
-# Back-end repo is [here](https://github.com/humaoxuan/Vote-System-Frontend).
+# Frontend repo is [here](https://github.com/humaoxuan/Vote-System-Frontend).
 
 # Technology Stack used by Maoxuan Hu:
 ## Back-end: 
